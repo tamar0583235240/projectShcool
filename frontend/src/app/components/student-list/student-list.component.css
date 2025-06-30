@@ -1,0 +1,84 @@
+/* רקע כללי */
+:host {
+  display: block;
+  background: none;
+  font-family: 'Segoe UI', 'Alef', Arial, sans-serif;
+  color: #2e3a3a;
+}
+
+/* כותרת */
+h4 {
+  text-align: center;
+  color: #2ec4b6;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 24px 0 18px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #2ec4b622;
+}
+
+/* רשימת תלמידים */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 24px auto;
+  max-width: 480px;
+}
+
+li {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #e7548012;
+  margin-bottom: 18px;
+  padding: 16px 22px 10px 22px;
+  border: 1.5px solid #e0fff7;
+  font-size: 1.08em;
+  color: #2ec4b6;
+  transition: box-shadow 0.18s, border-color 0.18s;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* שם תלמיד */
+li > strong {
+  color: #e75480;
+  font-size: 1.08em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* רשימת ציונים */
+li ul {
+  list-style: none;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+
+li ul li {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 4px 0;
+  color: #2ec4b6;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 2px;
+  border-radius: 0;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+  ul {
+    max-width: 98vw;
+  }
+  li {
+    padding: 10px 6px 8px 6px;
+    font-size: 1em;
+  }
+  h4 {
+    font-size: 1.08em;
+    margin: 14px 0 10px 0;
+  }
+}

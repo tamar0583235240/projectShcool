@@ -1,0 +1,106 @@
+/* רקע כללי */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0fff7 0%, #ffe6f7 100%);
+  font-family: 'Segoe UI', 'Alef', Arial, sans-serif;
+  color: #2e3a3a;
+}
+
+/* כותרת ראשית */
+h1 {
+  text-align: center;
+  font-size: 2.3em;
+  font-weight: 700;
+  margin: 38px 0 18px 0;
+  color: #2ec4b6; /* מנטה */
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', 'Alef', Arial, sans-serif;
+  text-shadow: 0 2px 10px #2ec4b622;
+}
+
+/* תפריט ניווט */
+nav {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  background: #fff8fc;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #ffb7d51a;
+  padding: 12px 0;
+  font-size: 1.08em;
+  border: 1.5px solid #ffe6f7;
+}
+
+/* קישורים בתפריט */
+nav a {
+  color: #2ec4b6; /* מנטה */
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 0 8px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transition: 
+    color 0.18s,
+    border-bottom 0.18s;
+  outline: none;
+  position: relative;
+  font-size: 1.08em;
+}
+
+nav a:focus {
+  color: #e75480;
+  text-decoration: underline wavy #e75480 2px;
+}
+
+nav a:hover, nav a.active-link {
+  color: #e75480; /* ורוד */
+  text-decoration: underline solid #e75480 2px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* הדגשה לקישור פעיל */
+nav a.active-link {
+  font-weight: 700;
+}
+/* קו מפריד */
+hr {
+  border: none;
+  border-top: 2px solid #2ec4b6;
+  margin: 0 0 24px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.18;
+}
+
+/* רספונסיביות */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.3em;
+    margin: 16px 0 8px 0;
+  }
+}
+
+/* אנימציה עדינה לכניסת עמודים */
+router-outlet + * {
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px);}
+  to   { opacity: 1; transform: none;}
+}

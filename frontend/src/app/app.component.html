@@ -1,0 +1,25 @@
+<h1 style="text-align: center;">{{ mainTitle }}</h1>
+
+<nav
+  style="
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  "
+>
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/students" routerLinkActive="active-link">Students</a>
+  <a routerLink="/teachers" routerLinkActive="active-link">Teachers</a>
+  <a routerLink="/details" routerLinkActive="active-link">Details</a>
+  <a
+    *ngIf="role === 'teacher'"
+    routerLink="/grades"
+    routerLinkActive="active-link"
+    >Grades</a
+  >
+</nav>
+
+<hr />
+
+<router-outlet></router-outlet>

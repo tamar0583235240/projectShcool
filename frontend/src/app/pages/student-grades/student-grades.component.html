@@ -1,0 +1,27 @@
+<div class="grades-container">
+  <h2>בדיקת ציוני תלמיד</h2>
+  <form (ngSubmit)="fetchGrades()">
+    <input
+      type="text"
+      [(ngModel)]="studentId"
+      name="studentId"
+      placeholder="הזן תעודת זהות/מספר תלמיד"
+      required
+    />
+    <button type="submit">הצג ציונים</button>
+  </form>
+
+  <div *ngIf="loading">טוען...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="studentGrade">
+    <h3>תלמיד: {{ studentGrade.studentId }}</h3>
+    <ul>
+      <li *ngFor="let g of studentGrade.grades">
+        {{ g.subject }}: {{ g.score }}
+      </li>
+    </ul>
+    <div>ממוצע: {{ studentGrade.average }}</div>
+    <div>מספר מקצועות: {{ studentGrade.totalSubjects }}</div>
+  </div>
+</div>

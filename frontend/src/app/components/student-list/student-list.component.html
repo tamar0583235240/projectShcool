@@ -1,0 +1,12 @@
+<h4>{{ title }}</h4>
+
+<ul>
+  <li *ngFor="let student of students">
+    <strong>{{ student.name }}</strong>
+    <ul>
+      <li *ngFor="let grade of student.grades">
+        {{ grade.subject }}: {{ grade.grade }}
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,71 @@
+<div class="details-container">
+  <form [formGroup]="detailsForm" (ngSubmit)="onSubmit()" novalidate>
+    <h2>הוספת תלמיד חדש</h2>
+
+    <label>שם פרטי:
+      <input formControlName="firstName" />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['firstName'].invalid" class="error">שדה חובה</div>
+
+    <label>טלפון:
+      <input formControlName="phone" />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['phone'].invalid" class="error">טלפון לא חוקי</div>
+
+    <label>ת"ז:
+      <input formControlName="idNumber" />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['idNumber'].invalid" class="error">ת"ז לא חוקית</div>
+
+    <label>סיסמה:
+      <input type="password" formControlName="password" placeholder="הזן סיסמה" required />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['password'].invalid" class="error">שדה חובה</div>
+
+    <fieldset>
+      <legend>כתובת</legend>
+      <label>עיר:
+        <input formControlName="city" />
+      </label>
+      <div *ngIf="submitted && detailsForm.controls['city'].invalid" class="error">שדה חובה</div>
+
+      <label>רחוב:
+        <input formControlName="street" />
+      </label>
+      <div *ngIf="submitted && detailsForm.controls['street'].invalid" class="error">שדה חובה</div>
+
+      <label>בית:
+        <input formControlName="houseNumber" />
+      </label>
+      <div *ngIf="submitted && detailsForm.controls['houseNumber'].invalid" class="error">שדה חובה</div>
+
+      <label>דירה:
+        <input formControlName="apartmentNumber" />
+      </label>
+    </fieldset>
+
+    <label>גיל:
+      <input type="number" formControlName="age" />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['age'].invalid" class="error">גיל לא חוקי</div>
+
+    <label>כיתה:
+      <input formControlName="class" />
+    </label>
+    <div *ngIf="submitted && detailsForm.controls['class'].invalid" class="error">שדה חובה</div>
+
+    <div *ngIf="detailsForm.get('age')?.value > 14">
+      <label>בית ספר יסודי למדת:
+        <input formControlName="elementarySchool" />
+      </label>
+      <div *ngIf="submitted && detailsForm.controls['elementarySchool'].invalid" class="error">שדה חובה</div>
+    </div>
+
+    <button type="submit">שלח</button>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+  <a routerLink="/" class="back-link">חזרה לדף הבית</a>
+</div>

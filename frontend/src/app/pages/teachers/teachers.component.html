@@ -1,0 +1,11 @@
+<div class="teachers-container">
+  <h2>רשימת מורים</h2>
+  <div *ngIf="loading">טוען...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <ul *ngIf="teachers.length">
+    <li *ngFor="let teacher of teachers">
+      <strong>{{ teacher.firstName }} {{ teacher.lastName }}</strong>
+      <span>כיתה: {{ teacher.class }} | טלפון: {{ teacher.phone }}</span>
+    </li>
+  </ul>
+</div>

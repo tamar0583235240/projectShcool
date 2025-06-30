@@ -1,0 +1,19 @@
+<div class="students-container">
+  <h2>{{ mainTitle }}</h2>
+  <div *ngIf="loading">טוען...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="students.length">
+    <div>סה"כ תלמידים: {{ studentCount }}</div>
+    <ul>
+      <li *ngFor="let student of students">
+        <strong>{{ student.name }}</strong>
+        <span>
+          גיל: {{ student.age }} | כיתה: {{ student.grade }} | טלפון: {{ student.phone }}
+        </span>
+        <div style="color:#aaa; font-size:0.93em; margin-top:4px;">
+          נוצר בתאריך: {{ student.createdAt | date:'short' }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
